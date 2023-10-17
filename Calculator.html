@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Hema Priya's</title>
+  <title>Calculator</title>
+  <style>
+    #calculator {
+      width: 300px;
+      margin: 0 auto;
+      background-color: white;
+    }
+
+    #display {
+      width: 100%;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    #output {
+      width: 100%;
+      border: 1px solid black;
+      padding: 10px;
+      margin-top: 10px;
+    }
+
+    #buttons {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    button {
+      width: 75px;
+      height: 75px;
+      margin: 5px;
+      padding: 0;
+      font-size: 24px;
+      color: black;
+      background-color: ghostwhite;
+    }
+
+    button:hover {
+      background-color: #ccc;
+    }
+
+    button:active {
+      background-color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <h1>Hema Priya's</h1>
+  <h1>Calculator</h1>
+  <div id="calculator">
+    <input type="text" id="display" value="0">
+    <div id="output"></div>
+    <div id="buttons">
+      <button data-value="7">7</button>
+      <button data-value="8">8</button>
+      <button data-value="9">9</button>
+      <button data-value="4">4</button>
+      <button data-value="5">5</button>
+      <button data-value="6">6</button>
+      <button data-value="1">1</button>
+      <button data-value="2">2</button>
+      <button data-value="3">3</button>
+      <button data-value="0">0</button>
+      <button data-value="+">+</button>
+      <button data-value="-">-</button>
+      <button data-value="*">x</button>
+      <button data-value="/">÷</button>
+      <button data-value=".">.</button>
+      <button data-value="=">=</button>
+      <button data-value="AC">AC</button>
+    </div>
+  </div>
+
+  <script>
+    const display = document.querySelector("#display");
+    const output = document.querySelector("#output");
+    const buttons = document.querySelectorAll("#buttons button");
+
+    // Create a variable to store the current expression.
+    let expression = "";
+
+    // Add a click event listener to each button.
+    buttons.forEach(button => {
+      button.addEventListener("click", () => {
+        const value = button.dataset.value;
+
+        // If the button is a number, add the number to the expression.
+        if (/^\d$/.test(value)) {
+          expression += value;
+          display.value = expression;
+        }
+
+        // If the button is an operator, add the operator to the expression.
+        else if (["+", "-", "*", "/"].includes(value)) {
+          expression += value;
+          display.value += value;
+        }
+
+        // If the button is the equals button, evaluate the expression and display the result.
+        else if (value === "=") {
+          const result = eval(expression);
+          output.innerHTML = result;
+          expression = "";
+          display.value = result;
+        }
+
+        // If the button is the clear button, clear the expression.
+        else if (value === "AC") {
+          expression = "";
+          display.value = "0";
+          output.innerHTML = "";
+        }
+      });
+    });
+  </script>
+</body>
+  This Calculator can Perform only Arthimetic Operations Such as Addtion,Subtraction,multipication and divition and also here are two screens one is for input and another is for output display
+</html>
+#calculator {
+  width: 300px;
+  margin: 0 auto;
+}
+
+#display {
+  width: 100%;
+  border: 1px solid black;
+  padding: 10px;
+}
+
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+button {
+  width: 75px;
+  height: 75px;
+  margin: 5px;
+  padding: 0;
+  font-size: 24px;
+}
+
+button:hover {
+  background-color: #ccc;
+}
+
+button:active {
+  background-color: #ccc;
+}
+const display = document.querySelector("#display");
+
+display.addEventListener("keyup", () => {
+  // Check if the value of the display input element is a valid number.
+  if (!/^\d+$/.test(display.value)) {
+    // Clear the input element if the value is not a valid number.
+    display.value = "";
+  }
+});

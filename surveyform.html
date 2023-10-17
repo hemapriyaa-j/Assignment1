@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cloud Vandana Survey Form</title>
+  <style>
+    body {
+      background-image: linear-gradient(to right, skyblue, lightblue);
+    }
+
+    .logo {
+      width: 200px;
+      height: 200px;
+      margin: 0 auto;
+    }
+
+    form {
+      width: 500px;
+      margin: 0 auto;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+    }
+
+    .popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+    }
+
+    .popup-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 500px;
+      background-color: #fff;
+      padding: 20px;
+    }
+
+    .popup-content h1 {
+      text-align: center;
+    }
+
+    .popup-content ul {
+      list-style-type: none;
+      padding: 0;
+    }
+
+    .popup-content li {
+      margin-bottom: 10px;
+    }
+
+    .popup-content button {
+      width: 100%;
+      padding: 10px;
+      background-color: #000;
+      color: #fff;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <img class="logo" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSpQLbn4SRGKNMGG3Aeqsw0i4eo8DYFQfHFQMfTkBeTKg&s" />
+<form id="survey-form" action="#" method="post">
+  <h1>Customer Survey Form</h1>
+  <p>Please fill out this form and submit it to help us improve our services.</p>
+  <div class="form-group">
+    <label for="first-name">First Name</label>
+    <input type="text" id="first-name" name="first-name" placeholder="Enter your first name" required>
+  </div>
+  <div class="form-group">
+    <label for="last-name">Last Name</label>
+    <input type="text" id="last-name" name="last-name" placeholder="Enter your last name" required>
+  </div>
+  <div class="form-group">
+    <label for="dob">Date of Birth</label>
+    <input type="date" id="dob" name="dob" required>
+  </div>
+  <div class="form-group">
+    <label for="country">Country</label>
+    <select id="country" name="country" required>
+      <option value="">Select your country</option>
+      <option value="India">India</option>
+      <option value="Australia">Australia</option>
+      <option value="USA">USA</option>
+      <!-- Add more options as needed -->
+  </select>
+  </div>
+   <label for="gender"><b>Gender:</b></label>
+  <div class="gender-options">
+    <input type="checkbox" name="gender" id="gender-male" value="Male"> Male
+    <input type="checkbox" name="gender" id="gender-female" value="Female"> Female
+  </div>
+
+  <div class="form-group">
+    <label for="profession">Profession</label>
+    <input type="text" id="profession" name="profession" placeholder="Enter your profession" required>
+  </div>
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+  </div>
+  <div class="form-group">
+    <label for="mobile">Mobile Number</label>
+    <input type="tel" id="mobile" name="mobile" placeholder="+91-1234567890" pattern="\+[0-9]{2}-[0-9]{10}" required>
+  </div>
+  <div class="form-group">
+  <label for="what is your over all impression on cloud vandana">what is your over all impression on cloud vandana</label>
+  </div>
+  <textarea name="overall-impression" id="overall-impression"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="How easy is it use Cloud Vandana's Cloud Computing Services"> How easy is it use Cloud Vandana's Cloud Computing Services</label>
+    </div>
+    <textarea name="overall-impression" id="overall-impression"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="How satisfied are you with the level of customer service you have received from Cloud Vandana?"> How satisfied are you with the level of customer service you have received from Cloud Vandana?</label>
+  </div>
+  <textarea name="overall-impression" id="overall-impression"></textarea>
+  </div>
+  <div class="form-group">
+  <label for="Do you have any suggestions for how CloudVandana can improve their customer service?"> Do you have any suggestions for how CloudVandana can improve their customer service? </label>
+    </div>
+  <textarea name="overall-impression" id="overall-impression"></textarea>
+  </div>
+  <div class="button-group">
+    <button type="submit">Submit</button>
+    <button type="reset">Reset</button>
+  </div>
+</form>
